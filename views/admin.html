@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <title>Klond Choice</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="icon" href="/img/dish.png" type="image/icon type" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="sidebar">
+      <div class="side-header">
+        <h3>K<span>lond Choice</span></h3>
+      </div>
+
+      <div class="side-content">
+        <div class="profile">
+          <div
+            class="profile-img bg-img"
+            style="background-image: url(img/profile.jpg)"
+          ></div>
+          <h4>Doggy ohoh</h4>
+          <small>Restaurant Owner</small>
+        </div>
+
+        <div class="side-menu">
+          <ul>
+            <li>
+              <a href="" class="active">
+                <span class="las la-home"></span>
+                <small>Dashboard</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="header-content">
+          <label for="menu-toggle">
+            <span class="las la-bars"></span>
+          </label>
+
+          <div class="header-menu">
+            <div class="user">
+              <div
+                class="bg-img"
+                style="background-image: url(img/profile.jpg)"
+              ></div>
+
+              <span class="las la-power-off"></span>
+              <a href="/html/login.html"><span>Logout</span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <h1>Dashboard</h1>
+        </div>
+
+        <div class="page-content">
+          <div class="analytics">
+            <div class="card">
+              <div class="card-head">
+                <h2>5,967</h2>
+                <span class="las la-shopping-cart"></span>
+              </div>
+              <div class="card-progress">
+                <small>All Orders</small>
+                <div class="card-indicator">
+                  <div class="indicator one" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h2>$47,500</h2>
+                <span class="las la la-dollar"></span>
+              </div>
+              <div class="card-progress">
+                <small>total money received</small>
+                <div class="card-indicator">
+                  <div class="indicator two" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="records table-responsive">
+            <div class="record-header">
+              <div class="add">
+                <span>Entries</span>
+                <select name="" id="">
+                  <option value="">ID</option>
+                  <option value="">Name</option>
+                </select>
+              </div>
+
+              <div class="browse">
+                <input
+                  type="search"
+                  placeholder="Search"
+                  class="record-search"
+                />
+              </div>
+            </div>
+
+            <div>
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th><span class="las la-sort"></span> CLIENT</th>
+                    <th><span class="las la-sort"></span> PRICE</th>
+                    <th><span class="las la-sort"></span> DATE FOR ORDER</th>
+                    <th><span class="las la-sort"></span> STATUS</th>
+                    <th><span class="las la-sort"></span> ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#1234</td>
+                    <td>
+                      <div class="client">
+                        <div
+                          class="client-img bg-img"
+                          style="background-image: url(img/1.jpg)"
+                        ></div>
+                        <div class="client-info">
+                          <h4>Tiger eiei</h4>
+                          <small>tigerstupid@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>$123</td>
+                    <td>01 March, 2023</td>
+                    <td><span class="cook">Cook</span></td>
+                    <td>
+                      <div class="actions">
+                        <span class="las la-eye"></span>
+                        <span class="las la-ellipsis-v"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#5678</td>
+                    <td>
+                      <div class="client">
+                        <div
+                          class="client-img bg-img"
+                          style="background-image: url(img/2.jpg)"
+                        ></div>
+                        <div class="client-info">
+                          <h4>Webwebweb chalad</h4>
+                          <small>webkodthung@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>$456</td>
+                    <td>01 March, 2023</td>
+                    <td><span class="process">Process</span></td>
+                    <td>
+                      <div class="actions">
+                        <span class="las la-eye"></span>
+                        <span class="las la-ellipsis-v"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#9101</td>
+                    <td>
+                      <div class="client">
+                        <div
+                          class="client-img bg-img"
+                          style="background-image: url(img/3.png)"
+                        ></div>
+                        <div class="client-info">
+                          <h4>Frame cayeejai</h4>
+                          <small>framehandsome@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>$789</td>
+                    <td>01 March, 2023</td>
+                    <td>
+                      <span class="done">Done</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <span class="las la-eye"></span>
+                        <span class="las la-ellipsis-v"></span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
