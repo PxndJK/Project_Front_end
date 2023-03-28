@@ -7,7 +7,7 @@ body {
 }
 
 .bg-image {
-  background-image: url(img/TrackerBackground.jpg);
+  background-image: url(/img/TrackerBackground.jpg);
   backdrop-filter: blur(5px);
   height: 1920;
   width: 1080;

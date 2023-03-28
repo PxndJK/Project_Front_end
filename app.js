@@ -36,6 +36,17 @@ app.get("/register" ,(req,res) => {
     res.render("register")
 })
 
+app.get("/admin" ,(req,res) => {
+    res.render("admin")
+})
+
+app.get("/Checkout" ,(req,res) => {
+    res.render("Checkout")
+})
+
+app.get("/Tracking" ,(req,res) => {
+    res.render("Tracking")
+})
 
 app.listen(3000, function () {
     console.log("Server app listening on port");
