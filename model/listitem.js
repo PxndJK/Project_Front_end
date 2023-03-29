@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    _id: Number,
-    name: String,
+    user_id: String,
     email: String,
     password: String,
-    address: String
+    Username:String
 });
 
 // const foodSchema = new Schema({
