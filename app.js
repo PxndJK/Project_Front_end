@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const _ = require("lodash");
+const mongoose = require("mongoose");
+
+mongoose.connect('mongodb://127.0.0.1:27017/todolistDB')
+.then(()=> console.log('Database is connected'))
+.catch((e) => console.log(e));
 
 
 app.use(express.static(__dirname + "/public"));
