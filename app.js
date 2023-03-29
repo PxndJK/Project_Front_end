@@ -4,8 +4,12 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
+const listUser = require("./model/listitem").User;
+const listFood = require("./model/listitem").Food;
+const listCart = require("./model/listitem").Cart;
+const listOrder = require("./model/listitem").Order;
 
-mongoose.connect('mongodb://127.0.0.1:27017/todolistDB')
+mongoose.connect('mongodb://127.0.0.1:27017/ProjectFontEnd')
 .then(()=> console.log('Database is connected'))
 .catch((e) => console.log(e));
 
@@ -13,6 +17,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/todolistDB')
 app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/" ,(req,res) => {
