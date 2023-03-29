@@ -13,17 +13,17 @@
       <h1>Register</h1>
       <form method="post">
         <div class="txt_field">
-          <input type="text" required>
-          <span></span>
-          <label>Username</label>
-        </div>
-        <div class="txt_field">
-          <input type="text" required>
+          <input name="emailAdress" type="text" required>
           <span></span>
           <label>Email address</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input name="userName" type="text" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input name="UserPassword" type="password" required>
           <span></span>
           <label>Password</label>
         </div>
@@ -32,7 +32,8 @@
             <span></span>
             <label>Confirm Password</label>
           </div>
-        <input type="submit" value="Sign up">
+        <!-- <input type="submit" value="Sign up"> -->
+        <button class="buttonregis" type="submit">Sign up</button>
         <div class="signup_link">
           Already have account? <a href="/login">Log in</a>
         </div>
