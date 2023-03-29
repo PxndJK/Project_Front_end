@@ -8,6 +8,13 @@ const UserSchema = new Schema({
     Username:String
 });
 
+const AdminSchema = new Schema({
+    user_id: String,
+    email: String,
+    password: String,
+    Username:String
+});
+
 // const foodSchema = new Schema({
 //     _id: Number,
 //     name: String,
@@ -45,6 +52,8 @@ const UserSchema = new Schema({
 
 
 exports.User = mongoose.model("User", UserSchema);
+
+exports.Admin = mongoose.model("Admin", AdminSchema);
 
 // exports.Food = mongoose.model("food", foodSchema);
 
