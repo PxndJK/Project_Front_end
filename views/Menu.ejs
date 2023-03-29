@@ -22,7 +22,7 @@
         <ul class="navbar-nav">
         
           <li class="nav-item ">
-             <a href="/Home"><img src="/img/logo.png" alt=""></a>
+             <a href="/HomeUser"><img src="/img/logo.png" alt=""></a>
           </li>
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse ju" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link active " aria-current="page" href="/Home">Home</a>
+              <a class="nav-link active " aria-current="page" href="/HomeUser">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,12 +45,19 @@
               </ul>
             </li>
           </ul>
-            <li class="nav-item navbar-nav">
+            <ul style="display: flex; flex-direction: row; align-items: center; justify-content: center; list-style: none;">
+            <li style="margin-right: 10px; text-align: center;">
+              <p style="margin: 0;"><%= Username %></p>
+            </li>
+            <li class="nav-item navbar-nav" style="margin-right: 10px;">
               <a class="nav-link fas fa-shopping-cart cart" href="/cartnew"></a>
             </li>
-            <li class="nav-item login  navbar-nav">
-              <a class="nav-link info" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+            <li class="nav-item login navbar-nav">
+              <form action="/logout" method="POST" style="margin: 0;">
+                <button type="submit" class="nav-link info"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logout</button>
+              </form>
             </li>
+          </ul>
       
         </div>
       </div>
