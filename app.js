@@ -6,9 +6,9 @@ const _ = require("lodash");
 const mongoose = require("mongoose");
 const listUser = require("./model/listitem").User;
 const listAdmin = require("./model/listitem").Admin;
-const listFood = require("./model/listitem").Food;
-const listCart = require("./model/listitem").Cart;
-const listOrder = require("./model/listitem").Order;
+// const listFood = require("./model/listitem").Food;
+// const listCart = require("./model/listitem").Cart;
+// const listOrder = require("./model/listitem").Order;
 const session = require("express-session")
 const at = require("./control/authen")
 const atadmin = require("./control/authenad")
@@ -47,7 +47,7 @@ app.get('/HomeUser', at.authentication, async (req, res) => {
       const user = await listUser.findById(req.session.userId);
       if (user) {
         const username = user.Username;
-        res.render('HomeUser', { Username: username });
+        res.render('HomeUser', { Username: username }); //push data on ejs
       } else {
         res.redirect('/login'); 
       }
