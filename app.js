@@ -13,7 +13,7 @@ const session = require("express-session")
 const at = require("./control/authen")
 const atadmin = require("./control/authenad")
 
-mongoose.connect('mongodb://127.0.0.1:27017/todolistDB')
+mongoose.connect('mongodb://127.0.0.1:27017/Projectfontend')
 .then(()=> console.log('Database is connected'))
 .catch((e) => console.log(e));
 
@@ -26,7 +26,7 @@ app.use(session({
     variableresave: false,
     saveUninitialized: true,
     cookie: { maxAge: 3600000 }, //one hour
-    mongoUrl : ({mongoUrl: "mongodb://127.0.0.1:27017/todolistDB"}),
+    mongoUrl : ({mongoUrl: "mongodb://127.0.0.1:27017/Projectfontend"}),
 }));
 
 app.get("/" ,(req,res) => {

@@ -9,11 +9,13 @@
     />
     <title>Klond Choice</title>
     <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="/css/Track.css">
     <link rel="icon" href="/img/logo.png" type="image/icon type" />
     <link
       rel="stylesheet"
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   </head>
   <body>
     <input type="checkbox" id="menu-toggle" />
@@ -101,7 +103,7 @@
           </div>
 
           <div class="records table-responsive">
-            <div class="record-header">
+            <!-- <div class="record-header">
               <div class="add">
                 <span>Entries</span>
                 <select name="" id="">
@@ -117,7 +119,7 @@
                   class="record-search"
                 />
               </div>
-            </div>
+            </div> -->
 
             <div>
               <table width="100%">
@@ -136,10 +138,10 @@
                     <td>#1234</td>
                     <td>
                       <div class="client">
-                        <div
+                        <!-- <div
                           class="client-img bg-img"
                           style="background-image: url(img/1.jpg)"
-                        ></div>
+                        ></div> -->
                         <div class="client-info">
                           <h4>Tiger eiei</h4>
                           <small>tigerstupid@gmail.com</small>
@@ -151,8 +153,8 @@
                     <td><span class="cook">Cook</span></td>
                     <td>
                       <div class="actions">
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
+                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail"></span>
+                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder"></span>
                       </div>
                     </td>
                   </tr>
@@ -160,10 +162,10 @@
                     <td>#5678</td>
                     <td>
                       <div class="client">
-                        <div
+                        <!-- <div
                           class="client-img bg-img"
                           style="background-image: url(img/2.jpg)"
-                        ></div>
+                        ></div> -->
                         <div class="client-info">
                           <h4>Webwebweb chalad</h4>
                           <small>webkodthung@gmail.com</small>
@@ -172,11 +174,11 @@
                     </td>
                     <td>$456</td>
                     <td>01 March, 2023</td>
-                    <td><span class="process">Process</span></td>
+                    <td><span class="process">shipping</span></td>
                     <td>
                       <div class="actions">
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
+                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail2"></span>
+                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder2"></span>
                       </div>
                     </td>
                   </tr>
@@ -184,10 +186,10 @@
                     <td>#9101</td>
                     <td>
                       <div class="client">
-                        <div
+                        <!-- <div
                           class="client-img bg-img"
                           style="background-image: url(img/3.png)"
-                        ></div>
+                        ></div> -->
                         <div class="client-info">
                           <h4>Frame cayeejai</h4>
                           <small>framehandsome@gmail.com</small>
@@ -197,12 +199,18 @@
                     <td>$789</td>
                     <td>01 March, 2023</td>
                     <td>
-                      <span class="done">Done</span>
+                      <span class="done">delivered</span>
                     </td>
                     <td>
                       <div class="actions">
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
+                        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Launch demo modal
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Launch demo modal
+                        </button> -->
+                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail3"></span>
+                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder3"></span>
                       </div>
                     </td>
                   </tr>
@@ -213,5 +221,236 @@
         </div>
       </main>
     </div>
+
+    <!-- User1 -->
+    <div class="modal fade" id="seeDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="card">
+              <div class="card-head">
+                <h2>Tiger eiei</h2>
+              </div>
+              <div class="card-progress">
+                <small>All Orders</small>
+                <ul>
+                  <li>- Salad ×1</li>
+                  <li>- Ribeye with Garlic Mushrooms ×1</li>
+                </ul>
+                <!-- <div class="row px-3">
+                  <div class="col">
+                    <ul id="progressbar">
+                      <li class="step0 active" id="step1">COOKED</li>
+                      <li class="step0 text-center" id="step2">SHIPPED</li>
+                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="actiontoOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-head">
+                <h2>Tiger eiei</h2>
+              </div>
+              <div class="card-progress">
+                <small>Progress bar</small>
+                
+                <div class="row px-3">
+                  <div class="col">
+                    <ul id="progressbar">
+                      <li class="step0 active" id="step1">COOKED</li>
+                      <li class="step0 text-center" id="step2">SHIPPING</li>
+                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- User2 -->
+        <div class="modal fade" id="seeDetail2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+    
+                <div class="card">
+                  <div class="card-head">
+                    <h2>Webwebweb chalad</h2>
+                  </div>
+                  <div class="card-progress">
+                    <small>All Orders</small>
+                    <ul>
+                      <li>- Steak & Eggs ×1</li>
+                      <li>- Chocolate Brownies ×1</li>
+                    </ul>
+                    <!-- <div class="row px-3">
+                      <div class="col">
+                        <ul id="progressbar">
+                          <li class="step0 active" id="step1">COOKED</li>
+                          <li class="step0 text-center" id="step2">SHIPPED</li>
+                          <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="actiontoOrder2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                
+                <div class="card">
+                  <div class="card-head">
+                    <h2>Webwebweb chalad</h2>
+                  </div>
+                  <div class="card-progress">
+                    <small>Progress bar</small>
+                    
+                    <div class="row px-3">
+                      <div class="col">
+                        <ul id="progressbar">
+                          <li class="step0 active" id="step1">COOKED</li>
+                          <li class="step0  active text-center" id="step2">SHIPPING</li>
+                          <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <!-- User3 -->
+     <div class="modal fade" id="seeDetail3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="card">
+              <div class="card-head">
+                <h2>Frame cayeejai</h2>
+              </div>
+              <div class="card-progress">
+                <small>All Orders</small>
+                <ul>
+                  <li>- Garlic Butter Steak Bites ×1</li>
+                  <li>- Strawberry Tiramisu Trifle ×2</li>
+                </ul>
+                <!-- <div class="row px-3">
+                  <div class="col">
+                    <ul id="progressbar">
+                      <li class="step0 active" id="step1">COOKED</li>
+                      <li class="step0 text-center" id="step2">SHIPPED</li>
+                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="actiontoOrder3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="card">
+              <div class="card-head">
+                <h2>Frame cayeejai</h2>
+              </div>
+              <div class="card-progress">
+                <small>Progress bar</small>
+                
+                <div class="row px-3">
+                  <div class="col">
+                    <ul id="progressbar">
+                      <li class="step0 active" id="step1">COOKED</li>
+                      <li class="step0  active text-center" id="step2">SHIPPING</li>
+                      <li class="step0  active text-muted text-center" id="step3">DELIVERED</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+  
   </body>
 </html>

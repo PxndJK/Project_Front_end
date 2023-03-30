@@ -1,10 +1,10 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   background: linear-gradient(50deg, #a77979, #704f4f, #553939, #472d2d);
   height: 100vh;
   overflow: hidden;
-}
+} */
 
 .bg-image {
   background-image: url(/img/TrackerBackground.jpg);
