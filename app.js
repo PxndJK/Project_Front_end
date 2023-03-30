@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
+const flash = require('connect-flash');
 const mongoose = require("mongoose");
 const listUser = require("./model/listitem").User;
 const listAdmin = require("./model/listitem").Admin;
@@ -12,6 +13,15 @@ const listAdmin = require("./model/listitem").Admin;
 const session = require("express-session")
 const at = require("./control/authen")
 const atadmin = require("./control/authenad")
+
+// Configure session middleware
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(flash());
 
 mongoose.connect('mongodb://127.0.0.1:27017/Projectfontend')
 .then(()=> console.log('Database is connected'))
@@ -80,7 +90,7 @@ app.get('/Menu', at.authentication, async (req, res) => {
 });
 
 app.get("/login" ,(req,res) => {
-    res.render("login")
+  res.render('login',{message: req.flash('message')})
 })
 
 app.get("/loginadmin" ,(req,res) => {
@@ -96,6 +106,7 @@ app.post('/loginadmin', async (req,res)=>{
         console.log(req.session);
         res.redirect('/admin');
        } else {
+        req.flash('message','Check your email and password or register.');
         res.redirect('/loginadmin')
     }
 })
@@ -109,6 +120,7 @@ app.post('/login', async (req,res)=>{
         console.log(req.session);
         res.redirect('/HomeUser');
        } else {
+        req.flash('message','Check your email and password or register.');
         res.redirect('/login')
     }
 })
