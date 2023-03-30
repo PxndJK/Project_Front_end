@@ -94,7 +94,7 @@ app.get("/login" ,(req,res) => {
 })
 
 app.get("/loginadmin" ,(req,res) => {
-    res.render("loginadmin")
+  res.render('loginadmin',{message: req.flash('message')})
 })
 
 app.post('/loginadmin', async (req,res)=>{
@@ -106,7 +106,7 @@ app.post('/loginadmin', async (req,res)=>{
         console.log(req.session);
         res.redirect('/admin');
        } else {
-        req.flash('message','Check your email and password or register.');
+        req.flash('message','Email or password is incorrect. please try again');
         res.redirect('/loginadmin')
     }
 })
@@ -120,7 +120,7 @@ app.post('/login', async (req,res)=>{
         console.log(req.session);
         res.redirect('/HomeUser');
        } else {
-        req.flash('message','Check your email and password or register.');
+        req.flash('message','Email or password is incorrect. please try again');
         res.redirect('/login')
     }
 })
