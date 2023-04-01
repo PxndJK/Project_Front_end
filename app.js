@@ -29,8 +29,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 
-//Get Page Model
-var Page = require('./model/page');
 
 //Express fileUpload middleware
 app.use(fileUpload());
