@@ -25,7 +25,7 @@ mongoose.connect(config.database)
 .catch((e) => console.log(e));
 
 app.use(express.static(__dirname + "/public"));
-// app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, '/views'));
 app.set("view engine", "ejs");
 
 
@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 // app.use(express.static(path.join(__dirname,'public')));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 app.use(session({
     secret: "jklfsodifjsktnwjasdp465dd", // Never ever share this secret in production, keep this in separate file on environmental variable
@@ -120,12 +120,12 @@ app.get("/Tracking" ,(req,res) => {
     res.render("Tracking")
 })
 
-app.get('/HomeUser', at.authentication, async (req, res) => {
+app.get('/homeuser', at.authentication, async (req, res) => {
     try {
       const user = await listUser.findById(req.session.userId);
       if (user) {
         const username = user.Username;
-        res.render('HomeUser', { Username: username });
+        res.render('homeuser', { Username: username });
       } else {
         res.redirect('/login'); 
       }
@@ -185,7 +185,7 @@ app.post('/login', async (req,res)=>{
     if (oldUser) {
         req.session.userId = oldUser.id;
         console.log(req.session);
-        res.redirect('/HomeUser');
+        res.redirect('/homeuser');
        } else {
         res.redirect('/login')
     }
