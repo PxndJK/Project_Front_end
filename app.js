@@ -101,7 +101,7 @@ app.use(function (req, res, next) {
 
 
 app.get("/" ,(req,res) => {
-    res.render("Home")
+    res.render("home")
 })
 
 // app.get("/" ,(req,res) => {
@@ -109,15 +109,15 @@ app.get("/" ,(req,res) => {
 // })
 
 app.get("/Home" ,(req,res) => {
-    res.render("Home")
+    res.render("home")
 })
 
 app.get("/Checkoutss" ,(req,res) => {
-    res.render("Checkoutss")
+    res.render("checkoutss")
 })
 
 app.get("/Tracking" ,(req,res) => {
-    res.render("Tracking")
+    res.render("tracking")
 })
 
 app.get('/homeuser', at.authentication, async (req, res) => {
