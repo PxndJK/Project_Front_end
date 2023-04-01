@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: pxndjj/test-deploy8
+          tags: pxndjj/test-deploy16
 
       - name: prepare the docker-compose run
         run: |
