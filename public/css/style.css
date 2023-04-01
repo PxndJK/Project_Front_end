@@ -1,0 +1,88 @@
+#imgPreview {
+    margin: 20px;
+}
+
+#noimage {
+    width: 100px;
+    height: 100px;
+}
+
+img.pimage {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+a.pa {
+    display: inline-block;
+    height: 160px;
+}
+
+.row.product .p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img.spi{
+    width: 100%;
+}
+
+ul.gallery li {
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+}
+
+img.cpi {
+    width: 100px;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10%;
+    margin-left: 10px;
+    
+    /* add any other styles you want */
+}
+
+.box h3, .box h4, .box a {
+    margin: 0;
+    /* add any other styles you want */
+}
+
+.box img {
+    max-width: 100%;
+    /* add any other styles you want */
+}
+
+.checkout-btn {
+    display: inline-block;
+    background-color: #2691d9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #1c6ea4;
+  }
+  
+  .checkout-btn i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .checkout-btn span {
+    font-size: 18px;
+  }
+
+table.alignmiddle td {
+    vertical-align: middle !important;
+}
+  
+

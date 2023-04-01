@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, user-scalable=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/img/logo.png" type="image/icon type" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="center">
+        <a href="/Home"><img src="/img/Homeicon.png" alt=""></a>
+        <h1>Login as Admin</h1>
+        <form method="post" action="/loginadmin">
+          <div class="txt_field">
+            <input name="emailAdressAdmin" type="text" required>
+            <span></span>
+            <label>Email address</label>
+          </div>
+          <div class="txt_field">
+            <input name="AdminPassword" type="password" required>
+            <span></span>
+            <label>Password</label>
+          </div>
+          <div>
+            
+            <input type="submit" value="Login">
+
+          </div>
+          <div class="signup_link">
+          Not admin? <a href="/login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,444 @@
+/* body {
+  background-image: url(img/background.jpeg);
+  filter: blur(500px);
+  -webkit-filter: blur(8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+} */
+/* .logo{
+  border: 2px solid gray;
+  border-radius: 5px;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+
+.bg-image {
+  background-image: url(/img/background.jpeg);
+  backdrop-filter: blur(5px);
+}
+
+nav {
+  padding: 0 20px 10px;
+  text-align: center;
+
+
+}
+
+.login {
+  margin-right: 10px;
+}
+.info {
+  border-color: #2196f3;
+  color: dodgerblue;
+  border: 2px solid gray;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.nav-item a img {
+  width: 100px;
+  height: 100px;
+  transform: scale(1.4);
+}
+
+.info:hover {
+  background: #fffdd0;
+  color: white;
+}
+
+.frame {
+  height: auto;
+  width: 90%;
+  margin: 40px auto;
+}
+
+#mainhome {
+  padding-right: 12px;
+}
+
+#footer {
+  padding-top: 10px;
+  background-color: white;
+  padding-right: 12px;
+  text-align: center;
+}
+
+.carousel-item img {
+  border-radius: 50px;
+  border: 10px solid #fffdd0;
+}
+
+
+p img {
+  height: 20px;
+  width: 20px;
+}
+
+#footer .camt img {
+  height: auto;
+  width: 70%;
+}
+
+.orderbutton {
+  margin-bottom: 0;
+  margin: 0 45%;
+}
+
+.cart {
+  margin-right: 10px;
+}
+
+/* manupage */
+.auto-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  position: static;
+}
+
+.inner {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title-box {
+  margin-bottom: 45px;
+}
+.subtitle {
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 1em;
+  margin-bottom: 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+#appetizer {
+  background-color: #f5f4f3;
+  overflow: hidden;
+  padding-bottom: 60px;
+  padding-top: 90px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.image-col {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.menu-one.alternate .image-col {
+  order: 12;
+}
+
+.image-col .inner {
+  position: relative;
+  display: block;
+}
+
+.image-col .image {
+  border: solid 5px black;
+  border-radius: 20px;
+  background-color: black;
+  position: relative;
+  display: block;
+  padding-left: 0px;
+  height: max-content;
+  width: fit-content;
+}
+
+.image-col .image img {
+  height: 200px;
+  width: 325px;
+  padding: 6px;
+  border-radius: 20px;
+}
+.dish-block {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.inner-box {
+  position: relative;
+}
+.desc {
+  color: black;
+  font-size: 14px;
+  max-width: 350px;
+  position: relative;
+}
+.dish-block .title .ttl {
+  color: black;
+  background-color: #f5f4f3;
+  float: left;
+  padding-right: 15px;
+  position: relative;
+  text-transform: capitalize;
+}
+.menu-col .dish-block .title:before {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  content: "";
+  height: 6px;
+  left: 0;
+  margin-top: -3px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.title-box {
+  margin-bottom: 45px;
+}
+
+.dish-block .title .price {
+  background-color: #f5f4f3;
+  color: gold;
+  text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black;
+  font-size: 25px;
+  float: right;
+  font-size: 22px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.title {
+  line-height: 24px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* menulist */
+#menulist {
+  background-color: #f5f4f3;
+  padding-top: 100px;
+  padding-bottom: 65px;
+  position: relative;
+}
+.pattern-image {
+  margin: 0 auto;
+}
+
+.offer-block-three {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.offer-block-three .inner-box {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.inner-box .image {
+  background-color: black;
+  border: solid 5px black;
+  border-radius: 20px;
+  display: block;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.offer-block-three h4 {
+  margin-bottom: 10px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.inner-box img {
+  height: 300px;
+  width: 300px;
+  transition: all 0.5s ease;
+}
+
+.offer-block-three .desc {
+  color: black;
+  font-size: 14px;
+  margin-bottom: 15px;
+  position: relative;
+  height: 80px;
+}
+
+.offer-block-three .price {
+  color: gold;
+  text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black;
+  font-size: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+
+/* animateFadeInUp */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+/* dessert */
+#dessert {
+  background-color: #f5f4f3;
+  padding-bottom: 45px;
+  padding-top: 100px;
+  position: relative;
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+#dessert .dish-block {
+  margin-bottom: 55px;
+  position: relative;
+}
+
+#dessert .dish-block .inner-box {
+  min-height: 100px;
+  padding-left: 120px;
+  padding-top: 10px;
+  position: relative;
+}
+
+#dessert .dish-block .dish-image {
+  background-color: #f5f4f3;
+  border-radius: 22px;
+  height: 100px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+
+.dish-image img {
+  height: 100px;
+  width: 100px;
+}
+
+.texthome {
+  font-family: 'Gloock';
+  font-size: 100px;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 10%;
+  text-shadow: black 0.1em 0.1em;
+}
+.texthome2 {
+  font-family: 'Gloock';
+  font-size: 100px;
+  color: #f5f4f3;
+  color: gold;
+  text-align: right;
+  text-shadow: black 0.1em 0.1em;
+  
+}
+
+.texthome3 {
+  font-family: 'Gloock';
+  font-size: 50px;
+  color: #f5f4f3;
+  color: white;
+  text-align: right;
+  text-shadow: black 0.1em 0.1em;
+  
+}
+
+.gradiant-bg {
+  margin-top: 10%;
+  background-image: linear-gradient( 45deg, #483838, #42855B ,#90B77D, #D2D79F);
+  font-family: 'Gloock';
+  text-shadow:-5px -5px rgb(1, 24, 1);
+  font-weight: bold;
+    font-size: 100px;
+    background-size: 40%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+ animation: gradient 5s infinite;
+}
+
+.gradiant-bg2 {
+  background-image: linear-gradient( 45deg, #E26A2C, #FF8243 ,#FDA65D, #FFD07F);
+  font-family: 'Gloock';
+  text-shadow:-5px -5px rgb(49, 18, 4);
+  font-weight: bold;
+    font-size: 80px;
+    background-size: 40%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+ animation: gradient 5s infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
