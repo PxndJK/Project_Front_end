@@ -8,22 +8,10 @@
     <link rel="icon" href="/img/logo.png" type="image/icon type" />
   </head>
   <body>
-    <div>
-      <% if (message.length > 0) { %>
-        <div style="border: 1px solid #dc3545; background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 20px;">
-          <%= message %>
-        </div>
-      <% } %>
-    </div>
     <div class="row">
       <div class="center">
-        <div>
-          <div>
-            <a href="/Home" style="display: inline-block; vertical-align: middle;"><img src="/img/Homeicon.png" alt="" style="display: inline-block; vertical-align: middle; margin-right: 10px;"></a>
-            <h1>Login</h1>
-          </div>
-        </div>
-        
+        <a href="/Home"><img src="/img/Homeicon.png" alt=""></a>
+        <h1>Login</h1>
         <form method="post" action="/login">
           <div class="txt_field">
             <input name="emailAdress" type="text" required>
