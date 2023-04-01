@@ -45,9 +45,10 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(session({
     secret: "jklfsodifjsktnwjasdp465dd", // Never ever share this secret in production, keep this in separate file on environmental variable
     variableresave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: { maxAge: 3600000 }, //one hour
-    mongoUrl : ({mongoUrl: "mongodb://127.0.0.1:27017/Projectfontend"}),
+    mongoUrl : ({mongoUrl: "mongodb+srv://pxndjj:Po44nd55@projectdd.6p3fk87.mongodb.net/Projectfontend"}),
 }));
 
 //Express Validator middleware

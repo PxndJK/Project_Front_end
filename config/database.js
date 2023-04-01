@@ -1,3 +1,3 @@
 module.exports = {
-    database: 'mongodb://127.0.0.1:27017/Projectfontend'
+    database: 'mongodb+srv://pxndjj:Po44nd55@projectdd.6p3fk87.mongodb.net/Projectfontend'
 }
