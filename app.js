@@ -40,7 +40,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //parse application/json
 app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static("public"));
 
 app.use(session({
     secret: "jklfsodifjsktnwjasdp465dd", // Never ever share this secret in production, keep this in separate file on environmental variable
