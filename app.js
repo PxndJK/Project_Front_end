@@ -17,6 +17,9 @@ const atadmin = require("./control/authenad")
 var config = require('./config/database');
 var request = require('request');
 var fileUpload = require('express-fileupload')
+const Cart = require('./model/cart').Cart;
+const Order = require('./model/order').Order;
+
 
 
 
@@ -111,6 +114,47 @@ app.get("/" ,(req,res) => {
 app.get("/Home" ,(req,res) => {
     res.render("home")
 })
+
+app.post("/checkout", async (req, res) => {
+  const userId = req.session.userId;
+
+  try {
+    // Find the user's cart
+    const cart = await Cart.findOne({ userId: userId });
+
+    if (!cart) {
+      return res.status(400).send("No cart found for the user");
+    }
+
+    const userOrder = await Order.findOne({ userId: userId }).lean();
+
+    if (!userOrder) {
+      // Create a new order
+      const newOrder = new Order({
+        userId: userId,
+        items: cart.items,
+        orderDate: new Date(),
+        status: 'Pending',
+      });
+
+      // Save the new order
+      await newOrder.save();
+
+      // Empty the user's cart
+      cart.items = [];
+      await cart.save();
+      res.redirect("/checkoutss");
+    } else if (userOrder.status == 'Queuing') {
+      res.redirect("/status");
+    } else {
+      res.redirect('/payment')
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Internal server error");
+  }
+});
 
 app.get("/Checkoutss" ,(req,res) => {
     res.render("checkoutss")
