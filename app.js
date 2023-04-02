@@ -144,10 +144,8 @@ app.post("/checkout", async (req, res) => {
       cart.items = [];
       await cart.save();
       res.redirect("/checkoutss");
-    } else if (userOrder.status == 'Queuing') {
-      res.redirect("/status");
     } else {
-      res.redirect('/payment')
+      res.redirect('/checkoutss')
     }
 
   } catch (error) {
