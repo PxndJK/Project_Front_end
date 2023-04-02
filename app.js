@@ -145,6 +145,17 @@ app.post("/checkout", async (req, res) => {
       await cart.save();
       res.redirect("/checkoutss");
     } else {
+      const newOrder = new Order({
+        userId: userId,
+        items: cart.items,
+        orderDate: new Date(),
+        status: 'Pending',
+      });
+
+      // Save the new order
+      await newOrder.save();
+      cart.items = [];
+      await cart.save();
       res.redirect('/checkoutss')
     }
 
