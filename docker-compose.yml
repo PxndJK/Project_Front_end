@@ -1,6 +1,6 @@
 version: '3.8'
 services:
   front-end:
-    image: pxndjj/test-deploy16
+    image: pxndjj/test-deploy17
     ports:
       - '3000:3000'
