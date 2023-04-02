@@ -103,118 +103,60 @@
           </div>
 
           <div class="records table-responsive">
-            <!-- <div class="record-header">
-              <div class="add">
-                <span>Entries</span>
-                <select name="" id="">
-                  <option value="">ID</option>
-                  <option value="">Name</option>
-                </select>
-              </div>
-
-              <div class="browse">
-                <input
-                  type="search"
-                  placeholder="Search"
-                  class="record-search"
-                />
-              </div>
-            </div> -->
+         
 
             <div>
               <table width="100%">
                 <thead>
                   <tr>
-                    <th>Id</th>
-                    <th><span class="las la-sort"></span> CLIENT</th>
-                    <th><span class="las la-sort"></span> PRICE</th>
+                    <th>Username</th>
                     <th><span class="las la-sort"></span> DATE FOR ORDER</th>
                     <th><span class="las la-sort"></span> STATUS</th>
                     <th><span class="las la-sort"></span> ACTIONS</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>#1234</td>
-                    <td>
-                      <div class="client">
-                        <!-- <div
-                          class="client-img bg-img"
-                          style="background-image: url(img/1.jpg)"
-                        ></div> -->
-                        <div class="client-info">
-                          <h4>Tiger eiei</h4>
-                          <small>tigerstupid@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>$123</td>
-                    <td>01 March, 2023</td>
-                    <td><span class="cook">Cook</span></td>
-                    <td>
-                      <div class="actions">
-                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail"></span>
-                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder"></span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5678</td>
-                    <td>
-                      <div class="client">
-                        <!-- <div
-                          class="client-img bg-img"
-                          style="background-image: url(img/2.jpg)"
-                        ></div> -->
-                        <div class="client-info">
-                          <h4>Webwebweb chalad</h4>
-                          <small>webkodthung@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>$456</td>
-                    <td>01 March, 2023</td>
-                    <td><span class="process">shipping</span></td>
-                    <td>
-                      <div class="actions">
-                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail2"></span>
-                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder2"></span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#9101</td>
-                    <td>
-                      <div class="client">
-                        <!-- <div
-                          class="client-img bg-img"
-                          style="background-image: url(img/3.png)"
-                        ></div> -->
-                        <div class="client-info">
-                          <h4>Frame cayeejai</h4>
-                          <small>framehandsome@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>$789</td>
-                    <td>01 March, 2023</td>
-                    <td>
-                      <span class="done">delivered</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          Launch demo modal
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          Launch demo modal
-                        </button> -->
-                        <span class="las la-eye cursor" data-bs-toggle="modal" data-bs-target="#seeDetail3"></span>
-                        <span class="las la-ellipsis-v cursor" data-bs-toggle="modal" data-bs-target="#actiontoOrder3"></span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody id="orders-tbody">
+               
+                  
+                  <% orders.forEach(order => { %>
+                    <% allUser.forEach(user => { %>
+                      
+                         <% if (order.userId == user._id) { %>
+                          
+                    <tr>
+                      <td>
+                        <!-- <img src="${order.userImage}" alt="User Image"> -->
+                        
+                        <p><%= user.Username %></p>
+                        </td>
+                        <td><%=order.orderDate %></td>
+                        <td><span class="status ${order.status.toLowerCase()}" style="color: black; font-size: 13px;"><%= order.status %></span></td>
+                        <td>
+
+                        <button type="button" class="btn btn-warning btn-sm btn-rounded" onclick="updateOrderStatus('<%= order._id %>', 'Cooking')">
+                          Cook
+                          </button>
+
+                          <button type="button" class="btn btn-info btn-sm btn-rounded" onclick="updateOrderStatus('<%= order._id %>', 'Delivering')">
+                          Delivery
+                          </button>
+
+                          <button type="button" class="btn btn-success btn-sm btn-rounded" onclick="updateOrderStatus('<%= order._id %>', 'Complete')">
+                          Complete
+                          </button>
+
+                        </td>
+                    </tr>
+               
+                        <% } %>
+                    <% }) %>
+                  <% }) %>
+              
+                    
+            
+                    
+                  </tbody>
+
               </table>
             </div>
           </div>
@@ -222,232 +164,31 @@
       </main>
     </div>
 
-    <!-- User1 -->
-    <div class="modal fade" id="seeDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
+   <script>
+		function updateOrderStatus(orderId, newStatus) {
+	  fetch('/order/update-status', {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ orderId, newStatus }),
+	  })
+		.then((response) => {
+		  if (response.ok) {
+			// Refresh the page when the status is updated successfully
+			location.reload();
+		  } else {
+			throw new Error('Failed to update order status');
+		  }
+		})
+		.catch((error) => {
+		  console.error('Error:', error);
+		});
+	}
+	
+	  </script>
 
-            <div class="card">
-              <div class="card-head">
-                <h2>Tiger eiei</h2>
-              </div>
-              <div class="card-progress">
-                <small>All Orders</small>
-                <ul>
-                  <li>- Salad ×1</li>
-                  <li>- Ribeye with Garlic Mushrooms ×1</li>
-                </ul>
-                <!-- <div class="row px-3">
-                  <div class="col">
-                    <ul id="progressbar">
-                      <li class="step0 active" id="step1">COOKED</li>
-                      <li class="step0 text-center" id="step2">SHIPPED</li>
-                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
-                    </ul>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="actiontoOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="card">
-              <div class="card-head">
-                <h2>Tiger eiei</h2>
-              </div>
-              <div class="card-progress">
-                <small>Progress bar</small>
-                
-                <div class="row px-3">
-                  <div class="col">
-                    <ul id="progressbar">
-                      <li class="step0 active" id="step1">COOKED</li>
-                      <li class="step0 text-center" id="step2">SHIPPING</li>
-                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-        <!-- User2 -->
-        <div class="modal fade" id="seeDetail2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-    
-                <div class="card">
-                  <div class="card-head">
-                    <h2>Webwebweb chalad</h2>
-                  </div>
-                  <div class="card-progress">
-                    <small>All Orders</small>
-                    <ul>
-                      <li>- Steak & Eggs ×1</li>
-                      <li>- Chocolate Brownies ×1</li>
-                    </ul>
-                    <!-- <div class="row px-3">
-                      <div class="col">
-                        <ul id="progressbar">
-                          <li class="step0 active" id="step1">COOKED</li>
-                          <li class="step0 text-center" id="step2">SHIPPED</li>
-                          <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
-                        </ul>
-                      </div>
-                    </div> -->
-                  </div>
-                </div>
-    
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="actiontoOrder2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                
-                <div class="card">
-                  <div class="card-head">
-                    <h2>Webwebweb chalad</h2>
-                  </div>
-                  <div class="card-progress">
-                    <small>Progress bar</small>
-                    
-                    <div class="row px-3">
-                      <div class="col">
-                        <ul id="progressbar">
-                          <li class="step0 active" id="step1">COOKED</li>
-                          <li class="step0  active text-center" id="step2">SHIPPING</li>
-                          <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-     <!-- User3 -->
-     <div class="modal fade" id="seeDetail3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Order detail</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-
-            <div class="card">
-              <div class="card-head">
-                <h2>Frame cayeejai</h2>
-              </div>
-              <div class="card-progress">
-                <small>All Orders</small>
-                <ul>
-                  <li>- Garlic Butter Steak Bites ×1</li>
-                  <li>- Strawberry Tiramisu Trifle ×2</li>
-                </ul>
-                <!-- <div class="row px-3">
-                  <div class="col">
-                    <ul id="progressbar">
-                      <li class="step0 active" id="step1">COOKED</li>
-                      <li class="step0 text-center" id="step2">SHIPPED</li>
-                      <li class="step0 text-muted text-center" id="step3">DELIVERED</li>
-                    </ul>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="actiontoOrder3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Order User</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            
-            <div class="card">
-              <div class="card-head">
-                <h2>Frame cayeejai</h2>
-              </div>
-              <div class="card-progress">
-                <small>Progress bar</small>
-                
-                <div class="row px-3">
-                  <div class="col">
-                    <ul id="progressbar">
-                      <li class="step0 active" id="step1">COOKED</li>
-                      <li class="step0  active text-center" id="step2">SHIPPING</li>
-                      <li class="step0  active text-muted text-center" id="step3">DELIVERED</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+        
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>

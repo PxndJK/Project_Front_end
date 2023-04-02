@@ -1,6 +1,6 @@
 <%- include ('partials/header') %>
 
-<% if (cart.items.length != 0) { %>
+<% if (typeof cart !== "undefined" && cart !== null && cart.items.length != 0) { %>
 
 <table class="table table-striped alignmiddle container">
     <br>
@@ -41,7 +41,7 @@
             <td colspan="6" align="right">
                 <!-- <a class="checkout-btn" href=""> -->
                     <i class="fa fa-shopping-cart"></i>
-                    <button type="submit">Checkout</span>
+                    <button type="submit">Checkout</button>
                 <!-- </a> -->
             </td>
         </form>
@@ -49,10 +49,8 @@
         
 </table>
 
-
 <% } else { %>
     <h3 class="text-center">Your cart is empty.</h3>
 <% } %>
-
 
 <%- include ('partials/footer') %>

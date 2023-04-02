@@ -288,7 +288,14 @@ app.get("/admin" , atadmin.authenticationadmin, async (req,res) => {
     try {
         const admin = await listAdmin.findById(req.session.userId);
         if (admin) {
-          res.render('admin');
+
+         const allOrder = await Order.find().lean();
+         const allUser = await listUser.find().lean();
+         console.log(allOrder,allUser)
+          res.render('admin',{
+            orders: allOrder,
+            allUser : allUser
+          });
         } else {
           res.redirect('/loginadmin'); 
         }
@@ -297,6 +304,34 @@ app.get("/admin" , atadmin.authenticationadmin, async (req,res) => {
         res.status(500).send('Internal Server Error');
       }
 })
+
+
+// app.get('/admin',atadmin.authenticationadmin,async(req,res)=>{
+//   try{
+//     const useradmin = await Admin.findById(req.session.userId);
+//     if(useradmin){
+//       const allOrder = await Order.find().lean();
+//       const allUser = await User.find().lean();
+
+//       res.render('admin',{
+//         adminname :useradmin.username,
+//         orders: allOrder,
+//         allUser: allUser
+
+//       })
+//     }else{
+//       res.redirect('/login-admin');
+//     }
+//   }catch(error){
+//     console.error('Error retrieving user:',error);
+//     res.status(500).send('Internal Server Error');
+//   }
+// });
+
+
+
+
+
 
 
 
@@ -325,6 +360,83 @@ app.post('/logout',(req,res)=>{
 })
 
 //set routes
+
+
+
+
+
+
+
+
+
+app.post("/submit-order", async (req, res) => {
+  console.log("submit-order route called");
+  try {
+    const { cartItems } = req.body;
+    const userId = req.session.userId;
+
+    console.log("cartItems:", cartItems);
+
+    const newOrder = new Order({
+      userId,
+      cartItems,
+      orderDate: new Date(),
+      status: "Pending",
+    });
+
+    await newOrder.save();
+    console.log("Order saved to database:", newOrder);
+
+    res.json({ message: "Order submitted successfully" });
+  } catch (error) {
+    console.error("Error submitting order:", error);
+    res.status(500).json({ message: "Error submitting order" });
+  }
+});
+
+
+
+
+app.post('/order/update-status', async (req, res) => {
+
+  // const allOrder = await Order.find({ userId: req.user.id }).lean();
+
+  const orderId = req.body.orderId;
+  const newStatus = req.body.newStatus;
+ 
+
+  try {
+    // Find the order by ID
+    const order = await Order.findById(orderId);
+
+    if (!order) {
+      return res.status(400).send('Order not found');
+    }
+
+    // Update the order status
+    order.status = newStatus;
+    order.orderDate = new Date();
+
+    // Save the updated order
+    await order.save();
+    res.redirect("/admin")
+   
+
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal server error');
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
